@@ -1,1 +1,1 @@
-python3 "/gpfs/projects/bsc88/data/09-scripts/catalan-dialects-classifier/classify_dialects.py" "$INPUT_FILE" "$OUTPUT_DIR"
+python3 classify_dialects.py "$INPUT_FILE" "$OUTPUT_DIR"
