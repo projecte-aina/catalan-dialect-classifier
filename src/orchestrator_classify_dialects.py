@@ -3,8 +3,8 @@ import glob
 import sys
 
 # Define source OSCAR directories
-source_pattern = "/gpfs/projects/bsc88/data/01-raw-collections/colossal-oscar-*/filtered/*_LANG*parquet"
-alt_source_pattern = "/gpfs/projects/bsc88/data/01-raw-collections/colossal-oscar-*/extracted/*/*LANG*jsonl"
+source_pattern = "/colossal-oscar-*/filtered/*_LANG*parquet"
+alt_source_pattern = "/colossal-oscar-*/extracted/*/*LANG*jsonl"
 
 # Languages of interest
 #languages = ["es", "ca", "gl", "eu", "pt", "oc", "an", "ast"]
@@ -46,7 +46,7 @@ def move_files(output_folder):
             greasy.write('[@ {} @]'.format(os.getcwd()))
             greasy.write(" export INPUT_FILE='{}'".format(file))
             greasy.write(" export OUTPUT_DIR='{}'".format(output_folder))
-            greasy.write(' && bash /gpfs/projects/bsc88/data/09-scripts/catalan-dialects-classifier/classify_dialects.sh')
+            greasy.write(' && bash classify_dialects.sh')
 
             i += 1
     
